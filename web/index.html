@@ -94,5 +94,28 @@
       loadMainDartJs();
     }
   </script>
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
+  <script defer src="https://www.gstatic.com/firebasejs/8.6.1/firebase-auth.js"></script>
+
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+       https://firebase.google.com/docs/web/setup#available-libraries -->
+  <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-analytics.js"></script>
+
+  <script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyAseOcw3Pp8BDuM5PN2nTQbfWUvFDyP_dI",
+    authDomain: "delivery-laundry-b3326.firebaseapp.com",
+    projectId: "delivery-laundry-b3326",
+    storageBucket: "delivery-laundry-b3326.appspot.com",
+    messagingSenderId: "229324578442",
+    appId: "1:229324578442:web:2c8b4f1c5d361bdd465773"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+  </script>
+  <script src="main.dart.js" type="application/javascript"></script>
 </body>
 </html>
