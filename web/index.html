@@ -97,6 +97,7 @@
   <!-- The core Firebase JS SDK is always required and must be listed first -->
   <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
   <script defer src="https://www.gstatic.com/firebasejs/8.6.1/firebase-auth.js"></script>
+  <script defer src="https://www.gstatic.com/firebasejs/8.6.1/firebase-firestore.js"></script>
 
   <!-- TODO: Add SDKs for Firebase products that you want to use
        https://firebase.google.com/docs/web/setup#available-libraries -->
@@ -116,6 +117,25 @@
   firebase.initializeApp(firebaseConfig);
   firebase.analytics();
   </script>
+  <script>
+   // Initialize Firebase with a default Firebase project
+  firebase.initializeApp(firebaseConfig);
+
+  // Initialize Firebase with a second Firebase project
+  var otherProject = firebase.initializeApp(otherProjectFirebaseConfig, "other");
+
+  console.log(firebase.app().name);  // "[DEFAULT]"
+  console.log(otherProject.name);    // "otherProject"
+
+  // Use the shorthand notation to access the default project's Firebase services
+  var defaultStorage = firebase.storage();
+  var defaultFirestore = firebase.firestore();
+
+  // Use the otherProject variable to access the second project's Firebase services
+  var otherStorage = otherProject.storage();
+  var otherFirestore = otherProject.firestore();
+  </script>
   <script src="main.dart.js" type="application/javascript"></script>
+  <script src="/__/firebase/init.js"></script>
 </body>
 </html>

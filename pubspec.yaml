@@ -35,6 +35,10 @@ dependencies:
   google_sign_in:
   firebase_auth:
   firebase_core:
+  page_transition:
+  datetime_picker_formfield:
+  select_form_field:
+  cloud_firestore: ^1.0.7
 
 dev_dependencies:
   flutter_test:
