@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:deliverylaundry/auth.dart';
-import 'package:deliverylaundry/Halaman_login.dart';
+import 'package:deliverylaundry/proses/auth.dart';
+import 'package:deliverylaundry/Halaman_Login.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:deliverylaundry/proses_database.dart';
+import 'package:deliverylaundry/proses/database.dart';
 
 class profilview extends StatefulWidget {
   const profilview({Key? key, required User user})
@@ -47,7 +47,18 @@ class _profilviewState extends State<profilview> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        elevation: 5,
+        centerTitle: true,
+        title: Text(
+          'PROFIL',
+          style: TextStyle(
+            color: Colors.white,
+            fontWeight: FontWeight.bold,
+            fontSize: 18,
+          ),
+        ),
+      ),
       body: Container(
         height: MediaQuery.of(context).size.height,
         decoration: BoxDecoration(
@@ -101,8 +112,9 @@ class _profilviewState extends State<profilview> {
                     Text(
                       'Hello',
                       style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 20,
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 18,
                       ),
                     ),
                     SizedBox(height: 8.0),
@@ -119,17 +131,18 @@ class _profilviewState extends State<profilview> {
                     Text(
                       _user.displayName!,
                       style: TextStyle(
-                        color: Colors.blue,
-                        fontSize: 20,
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 18,
                       ),
                     ),
                     SizedBox(height: 8.0),
                     Text(
                       '(${_user.email!})',
                       style: TextStyle(
-                        color: Colors.red,
-                        fontSize: 16,
-                        letterSpacing: 0.5,
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 18,
                       ),
                     ),
                     SizedBox(height: 24.0),
@@ -166,10 +179,9 @@ class _profilviewState extends State<profilview> {
                         child: Text(
                           'Keluar',
                           style: TextStyle(
-                            fontSize: 16,
-                            fontWeight: FontWeight.bold,
                             color: Colors.white,
-                            letterSpacing: 2,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 18,
                           ),
                         ),
                       ),

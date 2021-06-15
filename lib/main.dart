@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:splash_screen_view/SplashScreenView.dart';
-import 'package:deliverylaundry/Halaman_login.dart';
+import 'package:deliverylaundry/Halaman_Login.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:deliverylaundry/auth.dart';
+import 'package:deliverylaundry/proses/auth.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -17,21 +17,20 @@ class splashview extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        debugShowCheckedModeBanner: false,
-      home:SplashScreenView(
+      debugShowCheckedModeBanner: false,
+      home: SplashScreenView(
         navigateRoute: loginview(),
-        duration: 5000,
-        imageSize: 130,
+        duration: 6000,
+        imageSize: 200,
         imageSrc: "file/logo.png",
-        text: "Delivery Laundry",
+        text: "DELIVERY LAUNDRY",
         textType: TextType.ScaleAnimatedText,
         textStyle: TextStyle(
-          fontSize: 40.0,
-          color : Colors.white,
+            fontSize: 30.0,
+            color: Colors.white,
         ),
-        backgroundColor: Colors.indigo,
+        backgroundColor: Colors.blue,
       ),
-
     );
   }
 }

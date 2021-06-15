@@ -1,8 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:deliverylaundry/auth.dart';
-import 'package:deliverylaundry/daftarmenu.dart';
+import 'package:deliverylaundry/proses/auth.dart';
+import 'package:deliverylaundry/Daftar_Menu.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
