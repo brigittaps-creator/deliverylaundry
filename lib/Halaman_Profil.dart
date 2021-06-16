@@ -112,7 +112,7 @@ class _profilviewState extends State<profilview> {
                     Text(
                       'Hello',
                       style: TextStyle(
-                        color: Colors.white,
+                        color: Colors.black,
                         fontWeight: FontWeight.bold,
                         fontSize: 18,
                       ),
@@ -131,7 +131,7 @@ class _profilviewState extends State<profilview> {
                     Text(
                       _user.displayName!,
                       style: TextStyle(
-                        color: Colors.white,
+                        color: Colors.black,
                         fontWeight: FontWeight.bold,
                         fontSize: 18,
                       ),
@@ -140,7 +140,7 @@ class _profilviewState extends State<profilview> {
                     Text(
                       '(${_user.email!})',
                       style: TextStyle(
-                        color: Colors.white,
+                        color: Colors.blue,
                         fontWeight: FontWeight.bold,
                         fontSize: 18,
                       ),
