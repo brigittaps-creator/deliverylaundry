@@ -253,7 +253,7 @@ class _riwayatpemesananState extends State<riwayatpemesanan> {
                             ),
                             title: Text(':'),
                             trailing: Text(
-                              '${1*6000}',
+                              'Rp.'+'${1*6000}',
                               style: TextStyle(
                                 fontSize: 14,
                                 fontWeight: FontWeight.bold,
