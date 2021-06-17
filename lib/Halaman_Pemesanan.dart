@@ -517,9 +517,34 @@ class pemesananview extends StatelessWidget {
                                 context: context,
                                 builder: (context) {
                                   return AlertDialog(
-                                    // Retrieve the text the that user has entered by using the
-                                    // TextEditingController.
-                                    content: Text('Tidak Menerima Pesanan Lebih Dari 10 Kg'),
+                                    title: ListTile(
+                                      title: Text(
+                                        'Peringatan',
+                                        style: TextStyle(
+                                            fontWeight: FontWeight.bold
+                                        ),
+                                        textAlign: TextAlign.center,
+                                      ),
+                                      trailing: Icon(
+                                        Icons.warning_amber_outlined,
+                                        color: Colors.red,
+                                      ),
+                                    ),
+                                    content: Text('Pemesanan Tidak Boleh Lebih Dari 10 Kg'),
+                                    actions: [
+                                      TextButton(
+                                        child: Text(
+                                          'Coba Lagi',
+                                          style: TextStyle(
+                                            color: Colors.red,
+                                            fontWeight: FontWeight.bold,
+                                          ),
+                                        ),
+                                        onPressed: () {
+                                          Navigator.of(context).pop(false);
+                                        },
+                                      ),
+                                    ],
                                   );
                                 },
                               );
