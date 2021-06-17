@@ -392,7 +392,7 @@ class pemesananview extends StatelessWidget {
                               );
                             }
 
-                            else if(total_berat_int > 5){
+                            else if(total_berat_int <= 10 ){
                               var estimasi = 4;
                               showDialog(
                                 context: context,
@@ -508,6 +508,18 @@ class pemesananview extends StatelessWidget {
 
                                       ],
                                     ),
+                                  );
+                                },
+                              );
+                            }
+                            else {
+                              showDialog(
+                                context: context,
+                                builder: (context) {
+                                  return AlertDialog(
+                                    // Retrieve the text the that user has entered by using the
+                                    // TextEditingController.
+                                    content: Text('Tidak Menerima Pesanan Lebih Dari 10 Kg'),
                                   );
                                 },
                               );
