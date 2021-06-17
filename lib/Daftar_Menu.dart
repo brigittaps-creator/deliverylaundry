@@ -1,14 +1,12 @@
+import 'package:deliverylaundry/Halaman_Login.dart';
 import 'package:deliverylaundry/Halaman_Pemesanan.dart';
+import 'package:deliverylaundry/Halaman_Profil.dart';
 import 'package:deliverylaundry/Halaman_Riwayat_Pemesanan.dart';
 import 'package:deliverylaundry/Halaman_Tentang_Kami.dart';
-import 'package:flutter/material.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:deliverylaundry/Halaman_Login.dart';
-import 'package:page_transition/page_transition.dart';
-import 'package:deliverylaundry/Halaman_Profil.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:deliverylaundry/proses/auth.dart';
-import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/material.dart';
+import 'package:page_transition/page_transition.dart';
 
 
 class daftarmenu extends StatefulWidget {
@@ -36,11 +34,9 @@ class _daftarmenuState extends State<daftarmenu> {
         var end = Offset.zero;
         var curve = Curves.ease;
 
-        var tween =
-        Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
+        var tween = Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
 
-        return SlideTransition(
-          position: animation.drive(tween),
+        return SlideTransition(position: animation.drive(tween),
           child: child,
         );
       },
@@ -98,6 +94,8 @@ class _daftarmenuState extends State<daftarmenu> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
+
+                //Todo: Button Pemesanan Loundry
                 Container(
                   margin: const EdgeInsets.only(top: 10),
                   child: Card(
@@ -129,6 +127,8 @@ class _daftarmenuState extends State<daftarmenu> {
                     ),
                   ),
                 ),
+
+                //Todo: Riwayat Pemesanan
                 Container(
                   margin: const EdgeInsets.only(top: 10),
                   child: Card(
@@ -160,6 +160,8 @@ class _daftarmenuState extends State<daftarmenu> {
                     ),
                   ),
                 ),
+
+                //Todo: Tentang Kami
                 Container(
                   margin: const EdgeInsets.only(top: 10),
                   child: Card(
@@ -191,6 +193,8 @@ class _daftarmenuState extends State<daftarmenu> {
                     ),
                   ),
                 ),
+
+                //Todo: Button Profil
                 Container(
                   margin: const EdgeInsets.only(top: 10),
                   child: Card(

@@ -1,10 +1,7 @@
-import 'package:flutter/material.dart';
-import 'package:hexcolor/hexcolor.dart';
-import 'package:splash_screen_view/SplashScreenView.dart';
 import 'package:deliverylaundry/Halaman_Login.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:deliverylaundry/proses/auth.dart';
+import 'package:flutter/material.dart';
+import 'package:splash_screen_view/SplashScreenView.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

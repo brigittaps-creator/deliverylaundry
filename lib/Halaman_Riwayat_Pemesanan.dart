@@ -1,12 +1,12 @@
-import 'dart:html';
 
-import 'package:deliverylaundry/Halaman_Pemesanan.dart';
-import 'package:flutter/material.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:deliverylaundry/Halaman_Pemesanan.dart';
 import 'package:deliverylaundry/proses/database.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
 
+//Todo: Halaman Riwayat Pemesanan
 class riwayatpemesanan extends StatefulWidget {
   const riwayatpemesanan({Key? key, required User user})
       : _user = user,
@@ -73,31 +73,30 @@ class _riwayatpemesananState extends State<riwayatpemesanan> {
                   itemCount: snapshot.data!.docs.length,
                   itemBuilder: (context, index) {
 
-                    //id pesanan
+                    //Todo: ID pesanan
                     var id = snapshot.data!.docs[index].id;
                     String documentid = id;
 
-                    //info pesanan
+                    //Todo: Info Pesanan
                     var noteInfo = snapshot.data!.docs[index].data();
                     String alamat = noteInfo['alamat'];
                     String catatan = noteInfo['catatan'];
                     String tgl_ambil = noteInfo['tgl_ambil'];
                     String tgl_antar = noteInfo['tgl_antar'];
-                    String jumlah_barang = noteInfo['jumlah_barang'];
+                    String total_barang = noteInfo['total_barang'];
                     String total_berat = noteInfo['total_berat'];
-                    var a = 10; // An integer
-                    var b = "20"; // A string
-                    var c = int.parse(b);
-                    var d = print(a + c);
+                    String estimasi = noteInfo['estimasi'];
+                    String biaya = noteInfo['biaya'];
 
                     return Card(
+                      color: Colors.white.withOpacity(0.8),
                       elevation: 5,
                       child: Column(
                         children: [
-                          //ID Pemesanan
+                          //Todo: ID Pemesanan
                           ListTile(
                             leading: Text(
-                              'ID Pemesanan'+'$a',
+                              'ID Pemesanan',
                               style: TextStyle(
                                 fontSize: 14,
                                 fontWeight: FontWeight.bold,
@@ -115,7 +114,7 @@ class _riwayatpemesananState extends State<riwayatpemesanan> {
                             ),
                           ),
 
-                          //Tanggal Diambil
+                          //Todo: Tanggal Diambil
                           ListTile(
                             leading: Text(
                               'Tanggal Diambil',
@@ -127,16 +126,16 @@ class _riwayatpemesananState extends State<riwayatpemesanan> {
                             ),
                             title: Text(':'),
                             trailing: Text(
-                              '${tgl_ambil}',
+                              tgl_ambil,
                               style: TextStyle(
                                 fontSize: 14,
                                 fontWeight: FontWeight.bold,
-                                color: Colors.blue,
+                                color: Colors.black,
                               ),
                             ),
                           ),
 
-                          //Lokasi Pengambilan
+                          //Todo: Lokasi Pengambilan
                           ListTile(
                             leading: Text(
                               'Lokasi Pengambilan',
@@ -148,16 +147,16 @@ class _riwayatpemesananState extends State<riwayatpemesanan> {
                             ),
                             title: Text(':'),
                             trailing: Text(
-                              '${alamat}',
+                              alamat,
                               style: TextStyle(
                                 fontSize: 14,
                                 fontWeight: FontWeight.bold,
-                                color: Colors.blue,
+                                color: Colors.black,
                               ),
                             ),
                           ),
 
-                          //Tanggal Diantar
+                          //Todo: Tanggal Diantar
                           ListTile(
                             leading: Text(
                               'Tanggal Diantar',
@@ -169,16 +168,16 @@ class _riwayatpemesananState extends State<riwayatpemesanan> {
                             ),
                             title: Text(':'),
                             trailing: Text(
-                              '${tgl_antar}',
+                              tgl_antar,
                               style: TextStyle(
                                 fontSize: 14,
                                 fontWeight: FontWeight.bold,
-                                color: Colors.blue,
+                                color: Colors.black,
                               ),
                             ),
                           ),
 
-                          //Jumlah Barang
+                          //Todo: Jumlah Barang
                           ListTile(
                             leading: Text(
                               'Jumlah Barang',
@@ -190,16 +189,16 @@ class _riwayatpemesananState extends State<riwayatpemesanan> {
                             ),
                             title: Text(':'),
                             trailing: Text(
-                              '${jumlah_barang}',
+                              total_barang,
                               style: TextStyle(
                                 fontSize: 14,
                                 fontWeight: FontWeight.bold,
-                                color: Colors.blue,
+                                color: Colors.black,
                               ),
                             ),
                           ),
 
-                          //Catatan
+                          //Todo: Catatan
                           ListTile(
                             leading: Text(
                               'Catatan',
@@ -215,12 +214,12 @@ class _riwayatpemesananState extends State<riwayatpemesanan> {
                               style: TextStyle(
                                 fontSize: 14,
                                 fontWeight: FontWeight.bold,
-                                color: Colors.blue,
+                                color: Colors.black,
                               ),
                             ),
                           ),
 
-                          //Total Berat
+                          //Todo: Total Berat
                           ListTile(
                             leading: Text(
                               'Total Berat',
@@ -232,16 +231,37 @@ class _riwayatpemesananState extends State<riwayatpemesanan> {
                             ),
                             title: Text(':'),
                             trailing: Text(
-                              '$total_berat',
+                              total_berat + ' kg',
                               style: TextStyle(
                                 fontSize: 14,
                                 fontWeight: FontWeight.bold,
-                                color: Colors.blue,
+                                color: Colors.black,
                               ),
                             ),
                           ),
 
-                          //Total Biaya
+                          //Todo: Estimasi Jam Pengambilan Dan Pengantaran
+                          ListTile(
+                            leading: Text(
+                              'Estimasi',
+                              style: TextStyle(
+                                fontSize: 14,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.black,
+                              ),
+                            ),
+                            title: Text(':'),
+                            trailing: Text(
+                              '$estimasi' + ' hari',
+                              style: TextStyle(
+                                fontSize: 14,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.black,
+                              ),
+                            ),
+                          ),
+
+                          //Todo: Total Biaya
                           ListTile(
                             leading: Text(
                               'Total Biaya',
@@ -253,11 +273,11 @@ class _riwayatpemesananState extends State<riwayatpemesanan> {
                             ),
                             title: Text(':'),
                             trailing: Text(
-                              'Rp.'+'${1*6000}',
+                              'Rp.'+'$biaya',
                               style: TextStyle(
                                 fontSize: 14,
                                 fontWeight: FontWeight.bold,
-                                color: Colors.blue,
+                                color: Colors.black,
                               ),
                             ),
                           ),
