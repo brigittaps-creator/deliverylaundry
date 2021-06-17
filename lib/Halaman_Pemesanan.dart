@@ -531,20 +531,6 @@ class pemesananview extends StatelessWidget {
                                       ),
                                     ),
                                     content: Text('Pemesanan Tidak Boleh Lebih Dari 10 Kg'),
-                                    actions: [
-                                      TextButton(
-                                        child: Text(
-                                          'Coba Lagi',
-                                          style: TextStyle(
-                                            color: Colors.red,
-                                            fontWeight: FontWeight.bold,
-                                          ),
-                                        ),
-                                        onPressed: () {
-                                          Navigator.of(context).pop(false);
-                                        },
-                                      ),
-                                    ],
                                   );
                                 },
                               );

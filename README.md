@@ -1,3 +1,3 @@
 # deliverylaundry
 
-Aplikasi Delivery Laundry yang berbasis Android menggunakan Flutter dan Firebase Database
+Aplikasi Delivery Laundry berbasis Android menggunakan Flutter dan Firebase Database
