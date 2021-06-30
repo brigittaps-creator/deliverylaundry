@@ -18,15 +18,9 @@ class splashview extends StatelessWidget {
       home: SplashScreenView(
         navigateRoute: loginview(),
         duration: 6000,
-        imageSize: 200,
+        imageSize: 400,
         imageSrc: "file/logo.png",
-        text: "DELIVERY LAUNDRY",
-        textType: TextType.ScaleAnimatedText,
-        textStyle: TextStyle(
-            fontSize: 30.0,
-            color: Colors.white,
-        ),
-        backgroundColor: Colors.blue,
+        backgroundColor: Colors.white,
       ),
     );
   }

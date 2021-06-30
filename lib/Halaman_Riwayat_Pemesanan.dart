@@ -1,4 +1,3 @@
-
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:deliverylaundry/Halaman_Pemesanan.dart';
 import 'package:deliverylaundry/proses/database.dart';
@@ -73,9 +72,12 @@ class _riwayatpemesananState extends State<riwayatpemesanan> {
                   itemCount: snapshot.data!.docs.length,
                   itemBuilder: (context, index) {
 
-                    //Todo: ID pesanan
+                    //Todo: ID Antrian
                     var id = snapshot.data!.docs[index].id;
                     String documentid = id;
+
+                    var no_pesanan = documentid.substring(documentid.length - 6);
+
 
                     //Todo: Info Pesanan
                     var noteInfo = snapshot.data!.docs[index].data();
@@ -105,7 +107,7 @@ class _riwayatpemesananState extends State<riwayatpemesanan> {
                             ),
                             title: Text(':'),
                             trailing: Text(
-                              documentid,
+                              no_pesanan,
                               style: TextStyle(
                                 fontSize: 14,
                                 fontWeight: FontWeight.bold,
